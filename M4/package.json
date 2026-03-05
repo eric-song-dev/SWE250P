@@ -1,0 +1,11 @@
+{
+    "name": "practice-m4",
+    "version": "1.0.0",
+    "description": "SWE 250P Practice M4 — TypeScript fundamentals",
+    "scripts": {
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "typescript": "^5.7.0"
+    }
+}

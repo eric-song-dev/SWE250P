@@ -1,0 +1,11 @@
+{
+    "name": "practice-m5",
+    "version": "1.0.0",
+    "description": "SWE 250P Practice M5 — Advanced TypeScript & Webpack",
+    "scripts": {
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "typescript": "^5.7.0"
+    }
+}

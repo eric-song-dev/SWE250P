@@ -1,0 +1,12 @@
+{
+  "name": "practice-m2",
+  "version": "1.0.0",
+  "description": "SWE 250P Practice M2 - Simple Node.js Web Server",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tracker — Practice M5 (Advanced TypeScript)</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #0064a4;
+            margin-bottom: 4px;
+        }
+
+        h2 {
+            color: #0064a4;
+            font-size: 1.15em;
+            margin-top: 24px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 18px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .stat-card {
+            flex: 1;
+            background: #f0f6fb;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #d6e6f2;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #0064a4;
+        }
+
+        .stat-label {
+            font-size: 0.78em;
+            color: #666;
+        }
+
+        .progress-bar-bg {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: #0064a4;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .form-section {
+            background: #fafafa;
+            padding: 16px;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .form-row input[type="text"],
+        .form-row input[type="number"] {
+            flex: 1;
+            min-width: 100px;
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+
+        .form-row input[type="number"] {
+            max-width: 90px;
+        }
+
+        .btn {
+            padding: 8px 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .btn-add {
+            background: #0064a4;
+            color: #fff;
+        }
+
+        .btn-add:hover {
+            background: #004f83;
+        }
+
+        .btn-cycle {
+            background: #eee;
+            color: #333;
+        }
+
+        .btn-cycle:hover {
+            background: #ddd;
+        }
+
+        .btn-remove {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .btn-remove:hover {
+            background: #c0392b;
+        }
+
+        .course-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .course-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            gap: 10px;
+        }
+
+        .course-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .course-desc {
+            color: #666;
+            font-size: 0.88em;
+        }
+
+        .course-actions {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .badge {
+            font-size: 0.82em;
+            padding: 3px 8px;
+            border-radius: 10px;
+            white-space: nowrap;
+        }
+
+        .status-new {
+            background: #fdecea;
+            color: #c0392b;
+        }
+
+        .status-wip {
+            background: #fef9e7;
+            color: #b7950b;
+        }
+
+        .status-done {
+            background: #eafaf1;
+            color: #1e8449;
+        }
+
+        .demo-section {
+            margin-top: 24px;
+            background: #f9f9f9;
+            padding: 16px;
+            border-radius: 6px;
+            border: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        .demo-section p {
+            margin: 6px 0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">Loading…</div>
+
+    <!-- Load as ES module — supports import/export syntax -->
+    <script type="module" src="dist/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{
+    "name": "webpack-demo",
+    "version": "1.0.0",
+    "description": "SWE 250P Practice M5 — Chapter 7 Webpack Demo",
+    "main": "index.js",
+    "scripts": {
+        "build": "webpack-cli",
+        "start": "webpack serve"
+    },
+    "devDependencies": {
+        "terser-webpack-plugin": "^5.3.17",
+        "webpack": "^5.104.0",
+        "webpack-cli": "^6.0.1",
+        "webpack-dev-server": "^5.2.3"
+    }
+}

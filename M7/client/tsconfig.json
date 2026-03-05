@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "module": "esnext",
+        "target": "es2020",
+        "lib": [
+            "es2020",
+            "dom",
+            "dom.iterable"
+        ],
+        "removeComments": true,
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "baseUrl": "./",
+        "outDir": "dist",
+        "moduleResolution": "node",
+        "skipLibCheck": true,
+        "paths": {
+            "components/*": [
+                "src/components/*"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*"
+    ]
+}

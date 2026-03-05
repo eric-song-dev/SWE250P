@@ -1,0 +1,23 @@
+{
+    "name": "practice-m3",
+    "version": "1.0.0",
+    "description": "SWE 250P Practice M3 - React Components",
+    "main": "index.js",
+    "scripts": {
+        "build": "npx babel main.jsx --out-file main.js"
+    },
+    "private": true,
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@babel/cli": "^7.28.6",
+        "@babel/core": "^7.28.6",
+        "@babel/preset-env": "^7.28.6",
+        "@babel/preset-react": "^7.28.5"
+    },
+    "devDependencies": {
+        "@babel/plugin-proposal-class-properties": "^7.18.6",
+        "@babel/plugin-transform-arrow-functions": "^7.27.1"
+    }
+}

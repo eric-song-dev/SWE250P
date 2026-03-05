@@ -1,0 +1,29 @@
+{
+  "name": "mailbag-server",
+  "version": "1.0.0",
+  "description": "SWE 250P Practice M7 - Server-side webmail application",
+  "main": "index.js",
+  "scripts": {
+    "compile": "npx tsc && node ./dist/main.js",
+    "dev": "nodemon -e ts --exec \"npm run compile\"",
+    "start": "node ./dist/main.js"
+  },
+  "author": "Eric Song",
+  "license": "ISC",
+  "dependencies": {
+    "emailjs-imap-client": "^3.0.7",
+    "express": "^4.18.2",
+    "mailparser": "^3.6.5",
+    "nedb": "^1.8.0",
+    "nodemailer": "^6.9.8"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/mailparser": "^3.4.4",
+    "@types/nedb": "^1.8.12",
+    "@types/node": "^20.10.6",
+    "@types/nodemailer": "^6.4.14",
+    "nodemon": "^3.0.2",
+    "typescript": "^5.3.3"
+  }
+}

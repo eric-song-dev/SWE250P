@@ -1,0 +1,22 @@
+{
+    "plugins": [
+        "@babel/plugin-transform-arrow-functions",
+        "@babel/plugin-proposal-class-properties"
+    ],
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "browsers": [
+                        "last 3 versions",
+                        "safari >= 6"
+                    ]
+                }
+            }
+        ],
+        [
+            "@babel/preset-react"
+        ]
+    ]
+}

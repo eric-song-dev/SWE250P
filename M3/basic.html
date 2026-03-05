@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>React Basics - No JSX</title>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <link rel="stylesheet" href="css/basic.css">
+
+    <script>
+        // This file demonstrates React WITHOUT JSX, using React.createElement() directly.
+
+        function start() {
+            class CourseLink extends React.Component {
+                constructor(props) {
+                    super(props);
+                    console.log("CourseLink component created:", props.title);
+                }
+
+                title = this.props.title;
+                titleStyle = { color: "#0064a4" };
+
+                render() {
+                    return (
+                        React.createElement("li", {},
+                            React.createElement("h2", { style: this.titleStyle },
+                                this.title
+                            ),
+                            React.createElement("a", { href: this.props.href },
+                                this.props.description
+                            ),
+                            React.createElement("br", null),
+                            React.createElement("button", {
+                                // onClick handler: modifies title and calls setState to trigger a re-render of this component.
+                                onClick: () => {
+                                    if (this.title.includes("✓")) {
+                                        this.title = this.title.replace(" ✓", "");
+                                    } else {
+                                        this.title = this.title + " ✓";
+                                    }
+                                    this.setState({});
+                                }
+                            }, "Mark Visited"
+                            )
+                        )
+                    );
+                }
+            }
+
+            // Build the root element tree using React.createElement
+            const rootElement = React.createElement(
+                "div", { className: "container" },
+                React.createElement("h1", {}, "My Favorite Resources"),
+                React.createElement("p", {}, "Built with React.createElement() — no JSX"),
+                React.createElement(
+                    "ul", {},
+
+                    React.createElement(CourseLink, {
+                        title: "React Documentation",
+                        href: "https://react.dev",
+                        description: "Official React docs — learn React fundamentals"
+                    }),
+                    React.createElement(CourseLink, {
+                        title: "Eloquent JavaScript",
+                        href: "https://eloquentjavascript.net",
+                        description: "A modern introduction to programming"
+                    }),
+                    React.createElement(CourseLink, {
+                        title: "MDN Web Docs",
+                        href: "https://developer.mozilla.org",
+                        description: "Comprehensive web technology references"
+                    })
+                )
+            );
+
+            // ReactDOM.render() mounts the root element into the real DOM
+            ReactDOM.render(rootElement, document.getElementById("mainContainer"));
+        }
+    </script>
+</head>
+
+<body onload="start()">
+    <div id="mainContainer"></div>
+</body>
+
+</html>
