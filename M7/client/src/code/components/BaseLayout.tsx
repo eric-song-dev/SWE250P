@@ -16,14 +16,11 @@ import { createState } from "../state";
 import * as IMAP from "../IMAP";
 import * as Contacts from "../Contacts";
 
-
 // Root component that holds the entire application layout and state
 class BaseLayout extends Component {
 
-
     // Initialize state using the createState factory
     state = createState(this);
-
 
     // Load mailboxes and contacts when the component mounts
     componentDidMount(): void {

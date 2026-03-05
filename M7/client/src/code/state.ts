@@ -9,8 +9,6 @@ import * as SMTP from "./SMTP";
 export function createState(inParentComponent) {
 
     return {
-
-
         // Whether to show the "Please Wait" dialog
         pleaseWaitVisible: false,
 
@@ -42,48 +40,31 @@ export function createState(inParentComponent) {
         contactName: null,
         contactEmail: null,
 
-
         // Show or hide the "Please Wait" dialog
         showHidePleaseWait: function (inVisible: boolean): void {
-
             this.setState({ pleaseWaitVisible: inVisible });
-
         }.bind(inParentComponent),
-
 
         // Show the contact view (read-only mode)
         showContact: function (inID: string, inName: string, inEmail: string): void {
-
             console.log("state.showContact()", inID, inName, inEmail);
-
             this.setState({ currentView: "contact", contactID: inID, contactName: inName, contactEmail: inEmail });
-
         }.bind(inParentComponent),
-
 
         // Show the contact view (add mode)
         showAddContact: function (): void {
-
             console.log("state.showAddContact()");
-
             this.setState({ currentView: "contactAdd", contactID: null, contactName: "", contactEmail: "" });
-
         }.bind(inParentComponent),
-
 
         // Show the contact view (edit mode - Additional Feature)
         showEditContact: function (): void {
-
             console.log("state.showEditContact()");
-
             this.setState({ currentView: "contactEdit" });
-
         }.bind(inParentComponent),
-
 
         // Show the message view (read mode)
         showMessage: async function (inMessage: IMAP.IMessage): Promise<void> {
-
             console.log("state.showMessage()", inMessage);
 
             // Fetch the message body first
@@ -101,11 +82,9 @@ export function createState(inParentComponent) {
 
         }.bind(inParentComponent),
 
-
         // Show the compose message view
         // inType can be "new", "reply", or "contact"
         showComposeMessage: function (inType: string): void {
-
             console.log("state.showComposeMessage()");
 
             switch (inType) {
@@ -140,10 +119,8 @@ export function createState(inParentComponent) {
 
         }.bind(inParentComponent),
 
-
         // Add a mailbox to the list
         addMailboxToList: function (inMailbox: IMAP.IMailbox): void {
-
             console.log("state.addMailboxToList()", inMailbox);
 
             const cl: IMAP.IMailbox[] = this.state.mailboxes.slice(0);
@@ -155,10 +132,8 @@ export function createState(inParentComponent) {
 
         }.bind(inParentComponent),
 
-
         // Add a contact to the list
         addContactToList: function (inContact: Contacts.IContact): void {
-
             console.log("state.addContactToList()", inContact);
 
             const cl = this.state.contacts.slice(0);
@@ -167,10 +142,8 @@ export function createState(inParentComponent) {
 
         }.bind(inParentComponent),
 
-
         // Add a message to the list
         addMessageToList: function (inMessage: IMAP.IMessage): void {
-
             console.log("state.addMessageToList()", inMessage);
 
             const cl = this.state.messages.slice(0);
@@ -179,20 +152,16 @@ export function createState(inParentComponent) {
 
         }.bind(inParentComponent),
 
-
         // Clear the message list
         clearMessages: function (): void {
-
             console.log("state.clearMessages()");
 
             this.setState({ messages: [] });
 
         }.bind(inParentComponent),
 
-
         // Set the current mailbox and load its messages
         setCurrentMailbox: function (inPath: String): void {
-
             console.log("state.setCurrentMailbox()", inPath);
 
             this.setState({ currentView: "welcome", currentMailbox: inPath });
@@ -202,10 +171,8 @@ export function createState(inParentComponent) {
 
         }.bind(inParentComponent),
 
-
         // Get messages for a specific mailbox
         getMessages: async function (inPath: string): Promise<void> {
-
             console.log("state.getMessages() for", inPath);
 
             this.state.showHidePleaseWait(true);
@@ -232,10 +199,8 @@ export function createState(inParentComponent) {
 
         }.bind(inParentComponent),
 
-
         // Handle input field changes
         fieldChangeHandler: function (inEvent: any): void {
-
             console.log("state.fieldChangeHandler()", inEvent.target.id, inEvent.target.value);
 
             // Limit contact name to 16 characters
@@ -245,10 +210,8 @@ export function createState(inParentComponent) {
 
         }.bind(inParentComponent),
 
-
         // Save a new contact
         saveContact: async function (): Promise<void> {
-
             console.log("state.saveContact()", this.state.contactID, this.state.contactName, this.state.contactEmail);
 
             const cl = this.state.contacts.slice(0);
@@ -265,10 +228,8 @@ export function createState(inParentComponent) {
 
         }.bind(inParentComponent),
 
-
         // Update an existing contact (Additional Feature)
         updateContact: async function (): Promise<void> {
-
             console.log("state.updateContact()", this.state.contactID, this.state.contactName, this.state.contactEmail);
 
             // Update on server via AJAX PUT
@@ -296,10 +257,8 @@ export function createState(inParentComponent) {
 
         }.bind(inParentComponent),
 
-
         // Delete a contact
         deleteContact: async function (): Promise<void> {
-
             console.log("state.deleteContact()", this.state.contactID);
 
             this.state.showHidePleaseWait(true);
@@ -313,10 +272,8 @@ export function createState(inParentComponent) {
 
         }.bind(inParentComponent),
 
-
         // Delete a message
         deleteMessage: async function (): Promise<void> {
-
             console.log("state.deleteMessage()", this.state.messageID);
 
             this.state.showHidePleaseWait(true);
@@ -330,10 +287,8 @@ export function createState(inParentComponent) {
 
         }.bind(inParentComponent),
 
-
         // Send a message
         sendMessage: async function (): Promise<void> {
-
             console.log("state.sendMessage()", this.state.messageTo, this.state.messageFrom, this.state.messageSubject,
                 this.state.messageBody
             );
@@ -348,8 +303,5 @@ export function createState(inParentComponent) {
             this.setState({ currentView: "welcome" });
 
         }.bind(inParentComponent)
-
-
     };
-
 }

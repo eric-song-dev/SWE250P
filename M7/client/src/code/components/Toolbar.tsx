@@ -2,7 +2,6 @@ import React from "react";
 
 import Button from "@mui/material/Button";
 
-
 // Toolbar component with buttons for creating new messages and contacts
 const Toolbar = ({ state }) => (
 
@@ -18,6 +17,5 @@ const Toolbar = ({ state }) => (
     </div>
 
 );
-
 
 export default Toolbar;

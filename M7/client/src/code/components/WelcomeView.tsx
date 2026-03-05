@@ -1,6 +1,5 @@
 import React from "react";
 
-
 // Welcome view component shown when the application first loads
 const WelcomeView = () => (
 
@@ -9,6 +8,5 @@ const WelcomeView = () => (
     </div>
 
 );
-
 
 export default WelcomeView;
